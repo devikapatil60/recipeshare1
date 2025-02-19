@@ -1,38 +1,246 @@
-.App {
+/* ===================================== */
+/* ✅ General Styles */
+/* ===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #b4baba;
+  color: #281212;
+}
+
+.home-container {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ===================================== */
+/* ✅ Navbar Styles */
+/* ===================================== */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #1f1c16;
+  color: rgb(245, 245, 245);
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.8rem;
+}
+
+.logout-btn {
+  background: #94222d;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: #0f0f0f;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* ===================================== */
+/* ✅ Search Bar */
+/* ===================================== */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #877f7f;
+}
+
+/* ===================================== */
+/* ✅ Recipe Grid */
+/* ===================================== */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ===================================== */
+/* ✅ Recipe Cards */
+/* ===================================== */
+.recipe-card {
+  background: #b9bbc0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 15px;
+  text-align: left;
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+  background: #2b1212;
+}
+
+.recipe-img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-content {
+  padding: 10px;
+}
+
+.recipe-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 10px 0;
+}
+
+.recipe-desc {
+  font-size: 1rem;
+  color: #070707;
+  margin-bottom: 10px;
+}
+
+.posted-by {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ===================================== */
+/* ✅ Recipe Actions */
+/* ===================================== */
+.recipe-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.view-btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 5px;
   color: white;
+  background: #1f1c16;
 }
 
-.App-link {
-  color: #61dafb;
+.edit-btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background: #3c2d01;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  background: #540009;
+}
+
+.add-recipe-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1f1c16;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* ===================================== */
+/* ✅ No Recipes Message */
+/* ===================================== */
+.no-recipes {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* ===================================== */
+/* ✅ Add Recipe Page Styles */
+/* ===================================== */
+.add-recipe-container {
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(10, 9, 9, 0.1);
+}
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.add-recipe-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input,
+.form-textarea,
+.form-file-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-textarea {
+  height: 80px;
+}
+
+.ingredients-section {
+  margin-bottom: 10px;
+}
+
+.add-ingredient-btn {
+  padding: 8px 12px;
+  background: #1f1c16;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.submit-btn {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  background: #1f1c16;
 }
